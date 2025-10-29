@@ -20,13 +20,11 @@ function App() {
                 setCart(res.data);
             });
     },[])
-  
-    console.log(cart);
   return(
     <Routes>
       <Route index element={<HomePage cart = {cart}/>}></Route>
       <Route path="checkout" element={<Checkout cart = {cart}/>}></Route>
-      <Route path="orders" element={<Orders />}></Route>
+      <Route path="orders" element={<Orders cart = {cart}/>}></Route>
       <Route path="tracking" element={<Tracking />}></Route>
       <Route path="*" element={<Page_404/>}></Route>
       
